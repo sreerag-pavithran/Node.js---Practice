@@ -1,0 +1,15 @@
+{
+  "name": "simple-node",
+  "version": "1.0.0",
+  "description": "First Node Code",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sreerag Pavithran",
+  "license": "ISC",
+  "dependencies": {
+    "superhero-name-library": "^1.2.2",
+    "supervillains": "^3.0.0"
+  }
+}
