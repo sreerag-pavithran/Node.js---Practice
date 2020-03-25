@@ -1,0 +1,20 @@
+{
+  "name": "first-express.js",
+  "version": "1.0.0",
+  "description": "First Express Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start-server": "node app.js"
+  },
+  "author": "Sreerag",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "install": "^0.13.0"
+  }
+}
