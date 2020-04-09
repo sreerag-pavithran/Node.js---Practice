@@ -3,17 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather & News API</title>
     <link rel="stylesheet" href="style.css">
-    <title>News & Web API</title>
 </head>
 <body>
 
-    <div class="top-container">
-        <div class="search">
-            <input type="search" name="location-search" id="searchLoc" class="search-bar">
-            <button type="button" class="search-button">Search</button>
-        </div>
+    <div class="container">
+        <form action="/" method="POST">
+            <input type="text" placeholder="Search Location..." class="search-box" name="cityName" id="cityInput">
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+        <h2 class="place-name">Place Name</h2>
+        <p class="type">Mostly raining</p>
+        <p class="temp">10 °C</p>
+        <img src="images/04d@2x.png" alt="" class="we-image">
+        <p class="time">07:41AM</p>
+        <p class='date'>07/07/2020</p>
     </div>
+
+    <div class="left-container">
+        <h3 class="score">Live Score</h3>
+    </div>
+
+    <div class="right-container">
+        <h3 class="news">News Headlines</h3>
+    </div>
+
     
 </body>
 </html>
