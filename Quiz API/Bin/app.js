@@ -8,18 +8,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", function(req,res) {
-    res.sendFile(__dirname + "/index.html");
-});
-
-app.post("/game", function(req,res) {
-    const playerName = req.body.player;
-    console.log(playerName);
-});
-
-app.use("/", function(req,res) {
     res.sendFile(__dirname + "/game.html");
 });
 
+app.post("/", function(req,res) {
+    const question = req.body.question;
+    console.log(question);
+})
 
 
 
