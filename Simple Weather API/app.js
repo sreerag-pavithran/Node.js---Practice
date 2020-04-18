@@ -39,3 +39,15 @@ app.post("/", function(req, res){
 app.listen(3000, function(){
     console.log("Server running successfully!");
 });
+
+
+
+// app.get("/", async function(req,res) {
+//     const data = await fetch(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${newsApi}`)
+//     const wish = await data.json();
+//     res.json(wish)
+//     // console.log(wish)
+//     // console.log('Hi')
+//     // .then(data => data.json())
+//     // .then(data => console.log(data)).catch(error=>console.log(error));
+// });
