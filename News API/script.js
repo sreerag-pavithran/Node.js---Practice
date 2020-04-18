@@ -17,6 +17,7 @@ app.get("/", function(req,res) {
     const data = fetch(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${newsApi}`)
     .then(data => data.json())
     .then(data => { 
+  
     const title1 = data.articles[0].title;
     const title2 = data.articles[1].title;
     const title3 = data.articles[2].title;
@@ -104,3 +105,12 @@ app.listen(5000, function(){
      
 //     }).catch(error=>console.log(error));
 // });
+
+// ------------ USING FOR LOOP BUT GETTING ERROR -----------
+// for (var i = 0;i<=data.articles.length-1;i++){
+//     res.write(data.articles[i].title);
+//     res.send();
+//     // console.log("Title :"+data.articles[i].title);
+//     console.log("Description: " + data.articles[i].content);
+    
+// }
