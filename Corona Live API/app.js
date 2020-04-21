@@ -1,45 +1,41 @@
-const express = require('express');
-const fetch = require("node-fetch"); 
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
 
-const app = express();
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 
+var app = express();
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.use(logger('dev'));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get("/", function(req,res){
-    const data = fetch(`https://api.covid19api.com/summary`)
-    .then(data => data.json())
-    .then(data => {
-        // console.log(data);
-        res.write("<style>table, th, td {border: 1px solid black;border-collapse: collapse;}</style>");
-        res.write("<body style='padding:20px;'>");
-        res.write("<h1><center>Corona Virus Live Summary</center></h1>");
-        res.write("<center><button style='margin:10px 0 30px 0' formaction='#'>Refresh Table</button></center>");
-        res.write("<table style='width:100%'>");
-        res.write("<tr><th>COUNTRY</th><th>NEW CASES</th> <th>TOTAL CASES</th><th>TOTAL RECOVERED</th><th>TOTAL DEATHS</th></tr>")
-        
-        for (var i=0; i<data.Countries.length; i++){
-            const countryName = data.Countries[i].Country;
-            const newC = data.Countries[i].NewConfirmed;
-            const totalC = data.Countries[i].TotalConfirmed;
-            const totalD = data.Countries[i].TotalDeaths;
-            var totalR = data.Countries[i].TotalRecovered;
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
-            // console.log(data.Countries[i].Country);
-            // console.log(data.Countries[i].NewConfirmed);
-            // console.log(data.Countries[i].TotalConfirmed);
-            // console.log(data.Countries[i].TotalDeaths);
-            // console.log(data.Countries[i].TotalRecovered);
-            res.write("<tr><td>"+ countryName + "</th><th>"+ newC +"</th><th>"+ totalC + "</th><th>" + totalR + "</th><th>" + totalD + "</th>");
-        }
-        
-        res.send();
-
-    }).catch(error => console.log(error));
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
 });
 
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-
-
-app.listen(3000, function(){
-    console.log("Server running successfully!");
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
 });
+
+module.exports = app;

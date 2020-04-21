@@ -1,15 +1,22 @@
 {
-  "name": "corona-api",
-  "version": "1.0.0",
-  "description": "Corona Live API",
-  "main": "index.js",
+  "name": "corona-live-api",
+  "version": "0.0.0",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./bin/www",
+    "start-server": "node app.js"
   },
-  "author": "iamsreerag",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
     "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   }
 }
