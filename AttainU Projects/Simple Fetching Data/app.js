@@ -8,17 +8,26 @@ const arr = [];
 
 const data = fetch('http://jsonplaceholder.typicode.com/comments')
     .then(res => res.json())
-    .then(json => {
+    .then(json => {    
+        console.log(json);
+        let arr = [];
+        let filterArr = [];
+        let count = 0;
+        let postCount = 0;
         for(i in json){
-            var  obj  = json[i].body;
-            if(obj.length <= 50){
-                console.log(obj)
-                // arr.push({postId:json[i].postId,body:json[i].body})
-                // console.log(arr) 
-            }  
+            arr.push({'postId':json[i].postId,'body':json[i].body});
+            if(json[i].body.length<=50){
+                filterArr.push({'postId':json[i].postId,'body':json[i].body});
+            }
+            if(!postCount[arr[i].postId])
+            postCount[arr[i].postId] = count + 1
+        else{
+            postCount[arr[i].postId]= postCount[arr[i].postId] +1
         }
-        
-        console.log(obj)
+        }
+        console.log(arr)    
+        console.log(filterArr)
+        console.log(postCount)
     })
 
 
