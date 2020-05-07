@@ -1,0 +1,16 @@
+html(lang='en')
+  body
+    table.table.table-striped
+      tr
+        th UId
+        th Id
+        th Title
+        th Body
+
+      each n in element
+        tr
+          td= n.userId
+          td= n.id
+          td= n.title
+          td= n.body
+
