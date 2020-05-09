@@ -32,7 +32,7 @@ app.post('/login', (req, res)=>{
     for(let user in userDB){
         if(userDB[user].name == username && userDB[user].password == password){
             return res.status(200).send('Logged in');
-        }res.redirect('/?:loginFailed=true')
+        }res.redirect('/?loginFailed=true')
     }
 })
 
