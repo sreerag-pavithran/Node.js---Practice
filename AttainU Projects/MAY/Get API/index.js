@@ -39,6 +39,7 @@ app.post('/post', (req, res)=>{
 app.put('/:id', (req, res)=>{
     let postId = arr.find(c => c.id === parseInt(req.params.id));
     console.log(postId);
+    console.log(typeof postId)
     postId.name = req.body.name;
     res.send(postId);
     console.log(arr);

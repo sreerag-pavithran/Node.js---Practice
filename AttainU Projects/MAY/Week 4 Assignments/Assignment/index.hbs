@@ -13,15 +13,6 @@
  
        <div class="row">
            <div class="offset-md-4 col-md-4">
-               <h2>Login</h2>
-               <hr>
- 
-               {{#if loginFailed}}
-               <div class="alert alert-danger">
-                   Oops! You have entered a wrong username and password.
-               </div>
-               {{/if}}
- 
                <form action="/addTennisPlayer" method="POST">
  
                    <label for="username">
@@ -29,9 +20,9 @@
                        <input class="form-control" type="text" name="name" id="username">
                    </label>
  
-                   <label for="password">
+                   <label for="country">
                        Country:
-                       <input class="form-control" type="test" name="country" id="country">
+                       <input class="form-control" type="text" name="country" id="country">
                    </label>
  
                    <p></p>
