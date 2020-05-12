@@ -15,7 +15,8 @@ app.set('view engine', 'hbs');
 // app.set('view engine', 'ejs');
 
 const userDB = [
-    {name: 'Sreerag', country: 'India'}
+    {name: 'Sreerag', country: 'India'},
+    {name: 'John Doe', country: 'America'}
 ];
 
 

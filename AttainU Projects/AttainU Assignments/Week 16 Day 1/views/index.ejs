@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <title>File Upload : Multer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    body{
+      background-color: #2f3640;
+    }
+    .container{
+      background-color: #30BFBF;
+      width: 50%;
+      margin: auto;
+      margin-top: 50px;
+      height: 500px;
+      border-radius: 30px;
+      padding: 50px;
+    }
+
+    .form-group{
+      margin: 50px;
+    }
+
+    .btn{
+      padding: 5px 30px 5px 30px;
+      outline: none;
+      background-color: cornflowerblue;
+      border: 0px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .btn:hover{
+      background-color: #2f3640;
+      transition: 0.6s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 style="font-family: sans-serif; color: #fff; text-align: center;">File Upload using Multer</h2> <%= typeof msg != 'undefined' ? msg : '' %>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <form>
+        <div class="form-group">
+          <label for="fileUpload" style="font-family: sans-serif;">Please upload file:</label><br>
+          <input type="file" class="form-control-file" id="fileUpload" style="margin: 20px;" name="myImage" type="file">
+          <button type="submit" class="btn">Upload</button>
+        </div>
+      </form>
+    </form>
+    <img src="<%= typeof file != 'undefined' ? file : '' %>" class="responsive-img">
+  </div>
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+</html>
