@@ -72,6 +72,6 @@ app.post('/upload', (req, res) => {
    
 });
 
-app.listen(5000,(req,res)=>{
+app.listen(5000, (req,res)=>{
     console.log("Server is running")
 })
