@@ -4,4 +4,5 @@ Here I used,
 
 1. Mongoose Encryption
 2. .env
-3. Hashing(MD5)
+3. Salting and Hashing (More Secure than MD5)
+4. bcrypt module
