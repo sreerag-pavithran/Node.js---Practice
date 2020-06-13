@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bee Cafe</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Edit your <strong>Profile</strong></h1>
+     
+      </div>
+      <br /><br /><br />
+      <center>
+        <form action="/profile", method="POST">
+            <div style="width: 50%;">
+                <div class="form-group">
+                    <label for="inputAddress"><%= user.name %></label>
+                    <input type="text" name="name" required class="form-control" id="inputAddress" placeholder="John Doe" style="text-transform: capitalize;">
+                  </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputEmail4"><%= user.email %></label>
+                      <input type="email" class="form-control" required id="inputEmail4" placeholder="Email" name="email">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputPassword4">New Password</label>
+                      <input type="password" class="form-control" id="inputPassword4" required placeholder="Password" name="password">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputPassword4"><%= user.number %></label>
+                        <input type="text" class="form-control" id="inputPassword4" required placeholder="987654321" name="number">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAddress"><%= user.addressOne %></label>
+                    <input type="text" class="form-control" id="inputAddress" required placeholder="1234 Main St" name="addressOne">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAddress2"><%= user.addressTwo %></label>
+                    <input type="text" class="form-control" id="inputAddress2" required placeholder="Apartment, studio, or floor" name="addressTwo">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-8">
+                      <label for="inputCity"><%= user.city %></label>
+                      <input type="text" class="form-control" id="inputCity" required placeholder="Bangalore" name="city">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputZip"><%= user.zip %></label>
+                      <input type="text" class="form-control" id="inputZip" required placeholder="560051" name="zip">
+                    </div>
+                  </div>
+                  <br>
+                  <button type="submit" class="btn btn-primary">Update Profile</button>
+            </div>
+          </form>
+      </center>
+    </div>
+  </body>
+</html>
